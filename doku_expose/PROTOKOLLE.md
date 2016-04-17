@@ -1,11 +1,11 @@
 Protokolle
 
 16.04.2016
-- Expose (Andreas)
+- Expose (Andreas, Thomas)
 - Fragenkatalog (Thomas)
 - Use Cases Beispiele (Thomas)
 - Deployment (Thomas)
-- Architekturbild (Komponentendiagramm, welche Komponenten sollen die GUIs haben?) (Thomas)
+- Architekturbild (Komponenten- und Paketdiagramm, welche Komponenten sollen die GUIs haben?) (Thomas)
 - Explorative GUI (Bsp. Push Notification, App (Landing, Settings), Web => Lumzi) (Andreas)
 
 Thomas Ricklinkat:
