@@ -22,10 +22,26 @@ import android.content.SharedPreferences;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends AppCompatActivity {
 	
-	Button quiz, buttonAnswer, back, pause, weiter, wiki, google, close;
+	/**
+	 * Definition aller notwendigen Variablen: Buttons, etc.
+	 */
+	Button quiz;			// Ist das der Button "Frage"? Ich kann keinen Button sehen der "Quiz" heißt...
+	Button buttonAnswer;	// ruft die Antwort zu aktuellen Frage auf
+	Button back;			// ruft die zurueckliegende Frage wieder auf
+	Button pause;			// pausiert die aktuelle Frage
+	Button next;			// ruft die naechste Frage auf
+	Button wiki;			// ruft die URL https://www.wikipedia.de/ auf
+	Button google;			// ruft die URL https://www.google.de/ auf
+	Button close;			// schließt die Anwendung bzw. App
+	
+	// Ist das unsere "Kommunikationsbühne"? Also der Ort, an dem wir mit dem User kommunizieren?
 	TextView anzeige;
+	
+	// Zähler-Mockup: setzt den Array-Index des Fragearrays auf Null 
 	int setNextQuestion=0;
-    String[] question={
+    
+	// Fragen-Mockup als Array
+	String[] question={
     		" ",
     		"Dient Git der Versionsverwaltung für Software?",
     		"Ist Slack ein webbasierter Instant-Messanger?",
@@ -35,32 +51,48 @@ public class MainActivity extends AppCompatActivity {
     // String frageA;
 	// String frageB;
 	// String frageC;	
-	String antwortA;
-	String antwortB;
-	String hinweis;
 	
+	// Antwort-Mockup für Radio Button Gruppe? Richtig?
+	String antwortA;	// Könnte man nicht schon an dieser Stelle initialisieren mit "Ja lautet die Antwort! Gut gemacht!"
+	String antwortB;	// Könnte man nicht schon an dieser Stelle initialisieren mit "Die Antwort ist leider falsch!"
+	
+	// Dieser Hinweis wird angezeigt, wenn eine Frage pausiert wird.
+	String hinweisPause;		// Könnte man nicht schon an dieser Stelle initialisieren mit "Frage wurde für später gespeichert!"
+	
+	// Definition einer Radio Button Gruppe für geschlossene Fragen (Ja-Nein-Fragen)
 	private RadioGroup radioGroup;
 	private RadioButton radioAnswerButton;
-	  
+	
+	// Wozu dient diese Variable?
 	private static final int RESULT_SETTINGS = 1;
 	
+	/**
+	 * Was macht diese Klasse?
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		// frageA = "Dient Git der Versionsverwaltung für Software?";
 		// frageB = "Ist Slack ein webbasierter Instant-Messanger?";
 		// frageC = "Ist Trello eine Projektmanagementsoftware?";		
-		antwortA = "Ja lautet die Antwort! Gut gemacht!";
-		antwortB = "Die Antwort ist leider falsch!";
-		hinweis = "Frage wurde für später gespeichert!";
+		antwortA = "Ja lautet die Antwort! Gut gemacht!";	// siehe Kommentar oben bei Variablendeklaration
+		antwortB = "Die Antwort ist leider falsch!";		// siehe Kommentar oben bei Variablendeklaration
+		hinweisPause = "Frage wurde für später gespeichert!";	// siehe Kommentar oben bei Variablendeklaration
+		
 		quiz = (Button) findViewById(R.id.quiz);
-		buttonAnswer = (Button) findViewById(R.id.buttonAnswer);
-		pause = (Button) findViewById(R.id.pause);
-		back = (Button) findViewById(R.id.back);
-		weiter = (Button) findViewById(R.id.weiter);
+		
 		anzeige = (TextView) findViewById(R.id.totaloutput);
 		anzeige.setText(question[setNextQuestion]);
+		
+		buttonAnswer = (Button) findViewById(R.id.buttonAnswer);
+
+		back = (Button) findViewById(R.id.back);
+		pause = (Button) findViewById(R.id.pause);
+		next = (Button) findViewById(R.id.weiter);
+		
 		wiki = (Button) findViewById(R.id.wiki);
 		google = (Button) findViewById(R.id.google);
 		close = (Button) findViewById(R.id.close);
@@ -72,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 				// TODO Auto-generated method stub
 				// anzeige.setText("Frage: " + frageA);
 				anzeige.setText("Möchtest du beginnen? Klicke anschließend auf Weiter.");
-				}
+			}
 		});
 		
 		back.setOnClickListener(new View.OnClickListener() {
@@ -81,15 +113,13 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				// anzeige.setText("Frage: " + frageA);
-				if(setNextQuestion==0){
+				if(setNextQuestion==1){
 					setNextQuestion=5;
-				}
-				else
-				{
+				} else {
 					setNextQuestion--;
 				}
 				anzeige.setText(question[setNextQuestion]);
-				}
+			}
 		});
 		
 		pause.setOnClickListener(new View.OnClickListener() {
@@ -97,11 +127,11 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				anzeige.setText("Achtung: " + hinweis);
-				}
+				anzeige.setText("Achtung: " + hinweisPause);
+			}
 		});
 		
-		weiter.setOnClickListener(new View.OnClickListener() {
+		next.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -109,10 +139,10 @@ public class MainActivity extends AppCompatActivity {
 				// anzeige.setText("Frage: " + frageB);
 				setNextQuestion++;
 				if(setNextQuestion == 6){
-					setNextQuestion=0;
+					setNextQuestion=1;
 				}
 				anzeige.setText(question[setNextQuestion]);
-				}
+			}
 		});
 		
 		wiki.setOnClickListener(new View.OnClickListener() {
@@ -136,14 +166,17 @@ public class MainActivity extends AppCompatActivity {
 		close.setOnClickListener(new View.OnClickListener() {
 		     
 			@Override
-		     public void onClick(View v) {
-		        finish();
-		     }
+		    public void onClick(View v) {
+				finish();
+		    }
 		});
 		
 		addListenerOnButton();
 	}
 
+	/**
+	 * Was macht diese Klasse?
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -151,6 +184,9 @@ public class MainActivity extends AppCompatActivity {
 		return true;
 	}
 
+	/**
+	 * Was macht diese Klasse?
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
@@ -172,7 +208,11 @@ public class MainActivity extends AppCompatActivity {
 
 		return super.onOptionsItemSelected(item);
 	}
-    @Override
+
+	/**
+	 * Was macht diese Klasse?
+	 */
+	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
  
@@ -184,6 +224,9 @@ public class MainActivity extends AppCompatActivity {
  
     }
 
+	/**
+	 * Was macht diese Klasse?
+	 */
     private void showUserSettings() {
         SharedPreferences sharedPrefs = PreferenceManager
                 .getDefaultSharedPreferences(this);
@@ -203,7 +246,10 @@ public class MainActivity extends AppCompatActivity {
  
         settingsTextView.setText(builder.toString());
     }
-    
+
+	/**
+	 * Was macht diese Klasse?
+	 */
     public void addListenerOnButton() {
 
     	radioGroup = (RadioGroup) findViewById(R.id.radioQuestion);
@@ -216,29 +262,26 @@ public class MainActivity extends AppCompatActivity {
     		@Override
     		public void onClick(View v) {
 
-    		// get selected radio button from radioGroup
-    		int selectedId = radioGroup.getCheckedRadioButtonId();
+	    		// get selected radio button from radioGroup
+	    		int selectedId = radioGroup.getCheckedRadioButtonId();
 
-    		// find the radiobutton by returned id
-    		radioAnswerButton = (RadioButton) findViewById(selectedId);
+	    		// find the radiobutton by returned id
+	    		radioAnswerButton = (RadioButton) findViewById(selectedId);
 
-            if(selectedId == R.id.radioYes){
-    		anzeige.setText("Antwort: " + antwortA);
-    		mpButtonClick.start();
-    		
-    		Toast.makeText(MainActivity.this,
-    		radioAnswerButton.getText(), Toast.LENGTH_SHORT).show();
-            }
-            else if(selectedId == R.id.radioNo){
-            anzeige.setText("Antwort: " + antwortB);
-            
-        	Toast.makeText(MainActivity.this,
-        	radioAnswerButton.getText(), Toast.LENGTH_SHORT).show();
-            }
-            
+	            if(selectedId == R.id.radioYes){
+	            	anzeige.setText("Antwort: " + antwortA);
+	            	mpButtonClick.start();
+	            	Toast.makeText(MainActivity.this, radioAnswerButton.getText(), Toast.LENGTH_SHORT).show();
+	            }
+	            else if(selectedId == R.id.radioNo){
+	            	anzeige.setText("Antwort: " + antwortB);
+	            	Toast.makeText(MainActivity.this, radioAnswerButton.getText(), Toast.LENGTH_SHORT).show();
+	            }
+	        
     		}
-
+    		
     	});
-
+    	
       }
+    
 }
