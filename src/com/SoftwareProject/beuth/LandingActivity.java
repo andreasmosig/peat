@@ -15,7 +15,6 @@ import android.content.Intent;
  * 
  * @author #peatTeam
  * @version v1.0.1
- * 
  */
 @TargetApi(Build.VERSION_CODES.M)
 public class LandingActivity extends AppCompatActivity {
@@ -28,8 +27,9 @@ public class LandingActivity extends AppCompatActivity {
 	
 	/**
 	 * onCreate(Bundle savedInstanceState) ruft alle definierten
-	 * Elemente der Klasse LandingActivity auf (Buttons, Texte,
-	 * Funktionen, Parameter).
+	 * Elemente der Klasse LandingActivity auf:
+	 * - Buttons, Texte, Funktionen, Parameter
+	 * @param savedInstanceState
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,10 @@ public class LandingActivity extends AppCompatActivity {
 		theme = (Button) findViewById(R.id.theme);
 		setting = (Button) findViewById(R.id.setting);
 		
+		/**
+		 * game ruft das Quizz auf
+		 * (MainActivity)
+		 */
 		game.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -53,6 +57,10 @@ public class LandingActivity extends AppCompatActivity {
 			}
 		});
 
+		/**
+		 * question ruft die Auswahl fuer Fragen auf
+		 * (QuestionTypeActivity)
+		 */
 		question.setOnClickListener(new View.OnClickListener() {
 			
 		 	@Override
@@ -62,6 +70,11 @@ public class LandingActivity extends AppCompatActivity {
 		 	}
 		});
 		
+		/**
+		 * theme ruft die Themenverwaltung auf
+		 * (UserThemeActivity)
+		 * ab Version v2.0.1
+		 */
 		theme.setOnClickListener(new View.OnClickListener() {
 		 	
 		 	@Override
@@ -71,6 +84,10 @@ public class LandingActivity extends AppCompatActivity {
 		 	}
 		});
 
+		/**
+		 * setting ruft die Einstellungen auf
+		 * (EinstellungenActivity)
+		 */
 		setting.setOnClickListener(new View.OnClickListener() {
 		 	
 		    @Override

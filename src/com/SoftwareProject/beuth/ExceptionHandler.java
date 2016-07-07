@@ -14,7 +14,6 @@ import android.os.Build;
  * 
  * @author #peatTeam
  * @version v1.0.1
- * 
  */
 public class ExceptionHandler implements
         java.lang.Thread.UncaughtExceptionHandler {
@@ -25,6 +24,13 @@ public class ExceptionHandler implements
         myContext = context;
     }
 
+    /**
+     * UncaughtException
+     * - Erstellung des Error-Reports
+     * - Aufruf der CrashActivity
+     * @param thread Log-Prozess zur Laufzeit
+     * @param exception zu behandelnde Ausnahme
+     */
     public void uncaughtException(Thread thread, Throwable exception) {
         StringWriter stackTrace = new StringWriter();
         exception.printStackTrace(new PrintWriter(stackTrace));

@@ -77,8 +77,7 @@ public class QuestionTypeActivity extends AppCompatActivity {
 	}
 
 	/**
-	 * Die ueberschriebene Methode onCreateOptionsMenu oeffnet das Menue in der Aktionsleiste, bzw. fuegt Menuepunkte hinzu,
-	 * sofern diese existieren
+	 * onCreateOptionsMenu oeffnet das Menue in der Aktionsleiste, bzw. fuegt Menuepunkte hinzu, sofern diese existieren.
 	 */	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,54 +85,54 @@ public class QuestionTypeActivity extends AppCompatActivity {
 		return true;
 	}
 	
-	/*
-	 * Die folgenden 3 Methoden verarbeiten Klicks auf das Einstellungsmenue in der Aktionsleiste
-	 * und holen Daten aus EinstellungenActivity, strings.xml, preferences.xml und arrays.xml
+	/**
+	 * onOptionsItemSelected oeffnet bei Button-Klick in der Aktionsleiste die Activity.
 	 */
-		@Override
-		public boolean onOptionsItemSelected(MenuItem item) {
-			int id = item.getItemId();
-			if (id == R.id.action_settings) {
-				startActivity(new Intent(this, EinstellungenActivity.class));
-				return true;
-			}
-			
-			switch (item.getItemId()) {
-			
-			case R.id.action_settings:
-				Intent i = new Intent(this, EinstellungenActivity.class);
-				startActivityForResult(i, RESULT_SETTINGS);
-				break;
-			}
-			return super.onOptionsItemSelected(item);
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			startActivity(new Intent(this, EinstellungenActivity.class));
+			return true;
 		}
 		
-		@Override
-		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-			super.onActivityResult(requestCode, resultCode, data);
-			
-			switch (requestCode) {
-			case RESULT_SETTINGS:
-				showUserSettings();
-				break;
-			}
- 		}
+		switch (item.getItemId()) {
 		
-		private void showUserSettings() {
-			SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-			StringBuilder builder = new StringBuilder();
- 
-			builder.append("\n Benutzername: "
-                + sharedPrefs.getString("prefUsername", "NULL"));
- 
-			builder.append("\n Bericht senden:"
-                + sharedPrefs.getBoolean("prefSendReport", false));
- 
-			builder.append("\n Wiederholung: "
-                + sharedPrefs.getString("prefSyncFrequency", "NULL"));
- 
-			TextView settingsTextView = (TextView) findViewById(R.id.textUserSettings);
- 
-			settingsTextView.setText(builder.toString());
+		case R.id.action_settings:
+			Intent i = new Intent(this, EinstellungenActivity.class);
+			startActivityForResult(i, RESULT_SETTINGS);
+			break;
 		}
+		return super.onOptionsItemSelected(item);
+	}
+		
+	/**
+	 * onActivityResult ruft showUserSettings auf, wenn RESULT_SETTINGS instanziiert wurde.
+	 */
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		switch (requestCode) {
+		case RESULT_SETTINGS:
+			showUserSettings();
+			break;
+		}
+ 	}
+	
+	/**
+	 * showUserSettings baut via preferences, arras sowie strings die EinstellungenActivity auf.
+	 */
+	private void showUserSettings() {
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+		StringBuilder builder = new StringBuilder();
+ 			builder.append("\n Benutzername: "
+               + sharedPrefs.getString("prefUsername", "NULL"));
+ 			builder.append("\n Bericht senden:"
+               + sharedPrefs.getBoolean("prefSendReport", false));
+ 			builder.append("\n Wiederholung: "
+               + sharedPrefs.getString("prefSyncFrequency", "NULL"));
+ 			TextView settingsTextView = (TextView) findViewById(R.id.textUserSettings);
+ 			settingsTextView.setText(builder.toString());
+	}
 }

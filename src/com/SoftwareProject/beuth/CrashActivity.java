@@ -5,18 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 /**
- * CrashActivity liefert mittels Aufruf des ExceotionHandler
+ * CrashActivity liefert mittels Aufruf des ExceptionHandler
  * den relevanten Auszug aus dem Log der Android-Entwicklungsumgebung
  * sowie Informationen zum verwendeten Endgeraet.
  * 
  * @author #peatTeam
  * @version v1.0.1
- * 
  */
 public class CrashActivity extends AppCompatActivity {
 
 	TextView error;
 
+	/**
+	 * Ausgabe der Fehlermeldung per TextView error, activity_main-Layout.
+	 * @param savedInstancState
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

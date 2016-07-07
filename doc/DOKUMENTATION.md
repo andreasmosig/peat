@@ -726,7 +726,7 @@ Die zwei relevantesten Methoden hinsichtlich der Datenspeicherung und -bereitste
 > Question PeatDataSource.getNextQuestion(Boolean backButtonPush)
 
 
-Die Methode getNextQuestion wurde doppelt implementiert. Dies ermöglicht den Aufruf mit und ohne Übergabeparameter. Wenn kein Parameter übergeben wird, so wird automatisch ein Default übernommen. Es wird backButtonPush= false gesetzt und damit einfach die nächste Frage ausgegeben. Wird allerdings ein true beim Aufruf übergeben, so werden die zuletzt angezeigten Fragen angezeigt. Dies ermöglicht eine Navigation in der GUI. Außerdem wird der Code sowohl für die nächste als auch die letzte Frage verwendet. Dies steigert die Wiederverwendung und den Anpassungsaufwand.
+Die Methode getNextQuestion wurde doppelt implementiert. Dies ermöglicht den Aufruf mit und ohne Übergabeparameter. Wenn kein Parameter übergeben wird, so wird automatisch ein Default übernommen. Es wird backButtonPush= false gesetzt und damit einfach die nächste Frage ausgegeben. Wird allerdings ein true beim Aufruf übergeben, so werden die zuletzt angezeigten Fragen angezeigt. Dies ermöglicht eine Navigation in der GUI. Außerdem wird der Code sowohl für die nächste als auch die letzte Frage verwendet. Dies steigert die Wiederverwendung und verringert den Anpassungsaufwand.
 
 ##4.5. Versionierung
 

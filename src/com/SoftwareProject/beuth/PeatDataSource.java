@@ -6,15 +6,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
-/** Diese Klasse ist Data Access Object und für das Verwalten der Daten verantwortlich.
+/** 
+ * Diese Klasse ist Data Access Object und für das Verwalten der Daten verantwortlich.
  * - unterhält die Datenbankverbindung 
  * - ist für Hinzufügen, Auslesen und Löschen von Datensätzen zuständig
  * - wandelt Datensätze in Java-Objekte um
  * 		(So dass Code der Benutzeroberfläche nicht direkt mit den Datensätzen arbeiten muss.
  * 		Dies nennt man auch mehrschichtige Architektur.)
  * @author Steven Kühl-Pawellek
- * @version 1.0
- * */
+ * @version v1.0.1
+ */
 
 public class PeatDataSource {
 

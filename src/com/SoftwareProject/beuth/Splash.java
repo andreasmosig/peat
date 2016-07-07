@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
  * 
  * @author #peatTeam
  * @version v1.0.1
- * 
  */
 @TargetApi(Build.VERSION_CODES.M)
 public class Splash extends AppCompatActivity {
@@ -23,7 +22,7 @@ public class Splash extends AppCompatActivity {
 	
 	/**
 	 * onCreate(Bundle savedInstanceState) startet den MadiaPlayer aus res/raw,
-	 * oeffnet den splash aus res/drawable bzw. res/layout
+	 * oeffnet den splash aus res/drawable bzw. res/layout (limitiert)
 	 * und leitet weiter auf die MAIN (LandingActivity).
 	 */
 	@Override

@@ -1,9 +1,10 @@
 package com.SoftwareProject.beuth;
 
-/** Klasse Question enthält alle wichtigen Daten für das Handling der Fragen inkl. der Antworten.
+/**
+ * Klasse Question enthält alle wichtigen Daten für das Handling der Fragen inkl. der Antworten.
  * @author Steven Kühl-Pawellek
- * @version 1.0 
- * */
+ * @version v1.0.1
+ */
 
 public class Question {
 	private String questionText;

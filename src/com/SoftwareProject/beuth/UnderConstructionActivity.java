@@ -13,11 +13,13 @@ import android.os.Bundle;
  * 
  * @author #peatTeam
  * @version v1.0.1
- * 
  */
 @TargetApi(Build.VERSION_CODES.M)
 public class UnderConstructionActivity extends AppCompatActivity {
 	
+	/**
+	 * onCreat holt das Layout und fuegt ein Bild ein, aus res/drawable.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +30,5 @@ public class UnderConstructionActivity extends AppCompatActivity {
 		
 		Toast.makeText(this, "Zurück mit Back-Button.", Toast.LENGTH_SHORT).show();
 	}
-	
 	// Hier muss dann z.B. der Code fuer einen anderen Fragetyp hin.
-	
 }

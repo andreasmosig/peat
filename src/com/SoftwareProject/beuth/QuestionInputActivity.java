@@ -128,5 +128,4 @@ public class QuestionInputActivity extends AppCompatActivity {
 		
 		Toast.makeText(this, "Zurück mit Back-Button.", Toast.LENGTH_SHORT).show();
 	}
-	
 }

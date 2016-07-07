@@ -6,14 +6,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/** Klasse mit deren Hilfe die SQLite-Datenbank erstellt wird und alle Methoden zum Loggen und Schreiben von Daten in die DB bereitgestellt wird
+/** 
+ * Klasse mit deren Hilfe die SQLite-Datenbank erstellt wird und alle Methoden zum Loggen und Schreiben von Daten in die DB bereitgestellt wird
  * enthält weiterhin wichtige Konstanten
  * 		wie Tabellennamen,
  * 		Datenbankversion, 
  * 		oder Namen der Spalten
  * @author Steven Kühl-Pawellek
- * @version 1.0 
- * */
+ * @version v1.0.1
+ */
 public class PeatDbHelper extends SQLiteOpenHelper{
 
     private static final String LOG_TAG = PeatDbHelper.class.getSimpleName();

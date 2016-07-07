@@ -12,9 +12,8 @@ import android.view.View;
  * Die Klasse UserThemeActivity listet vorhandene Themengebiete auf und ermoeglicht das Hinzufuegen weiterer Themengebiete.
  * Weiterentwicklung geplant fuer v2.0.1.
  * 
- * @author ThomasRicklinkat, AndreasMosig
+ * @author #peatTeam
  * @version v1.0.1
- * 
  */
 @TargetApi(Build.VERSION_CODES.M)
 public class UserThemeActivity extends AppCompatActivity {

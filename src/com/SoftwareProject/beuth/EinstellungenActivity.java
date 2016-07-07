@@ -14,12 +14,15 @@ import android.widget.Toast;
  * 
  * @author #peatTeam
  * @version v1.0.1
- * 
  */
 @TargetApi(Build.VERSION_CODES.M)
 public class EinstellungenActivity extends PreferenceActivity
 	implements Preference.OnPreferenceChangeListener {
     
+	/**
+	 * Handling der Themenliste (Preferences) in den Einstellungen.
+	 * @param savedInstanceState
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -36,6 +39,12 @@ public class EinstellungenActivity extends PreferenceActivity
 	onPreferenceChange(themenlistePref, gespeicherteThemenliste);
 	}
 
+	/**
+	 * Bei Aenderung der Preferences durch den Benutzer.
+	 * @param preference (die geaenderten Preferences)
+	 * @param value (der neue Wert der Preferences)
+	 * @return boolean (true, update Preferences)
+	 */
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object value) {
     preference.setSummary(value.toString());
