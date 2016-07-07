@@ -2,7 +2,7 @@ package com.SoftwareProject.beuth;
 
 /**
  * Klasse Question enthält alle wichtigen Daten für das Handling der Fragen inkl. der Antworten.
- * @author Steven Kühl-Pawellek
+ * @author #peatTeam
  * @version v1.0.1
  */
 

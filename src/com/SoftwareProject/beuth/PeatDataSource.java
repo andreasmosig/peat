@@ -13,7 +13,7 @@ import android.widget.Toast;
  * - wandelt Datensätze in Java-Objekte um
  * 		(So dass Code der Benutzeroberfläche nicht direkt mit den Datensätzen arbeiten muss.
  * 		Dies nennt man auch mehrschichtige Architektur.)
- * @author Steven Kühl-Pawellek
+ * @author #peatTeam
  * @version v1.0.1
  */
 

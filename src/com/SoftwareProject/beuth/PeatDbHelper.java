@@ -12,7 +12,7 @@ import android.util.Log;
  * 		wie Tabellennamen,
  * 		Datenbankversion, 
  * 		oder Namen der Spalten
- * @author Steven Kühl-Pawellek
+ * @author #peatTeam
  * @version v1.0.1
  */
 public class PeatDbHelper extends SQLiteOpenHelper{
