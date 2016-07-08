@@ -378,7 +378,7 @@ Mit Blick auf das Projektziel (ausführbarer Prototyp) war es notwendig, diese s
 
 * Muss I: Frage und Antwort speichern für Ja/Nein-Fragen - GUI und Datenbank
 
-* Muss II: Antwort (true, false) aus DB lesen und per Weiter-Button ausgeben - GUI und Datenbank
+* Muss II: Antwort (true, false) aus DB lesen und per Button-Klick ausgeben - GUI und Datenbank
 
 * Muss III: Je Antwort-Wert (Boolean) aus DB wird entsprechend der gespeicherten Antwort ein Sound wiedergegeben - Sound und Datenbank
 
