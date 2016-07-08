@@ -180,8 +180,6 @@
 	    android:background="@color/blueFields"
 	    android:hint="@string/comment_Answer"
 	    android:inputType="textMultiLine"
-	    android:enabled="false"
-	    android:focusable="false"
 	    android:minHeight="25dp" />
 	
 	<!-- Button zur Falsch-Anzeige einer Antwort 
