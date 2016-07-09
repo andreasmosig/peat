@@ -31,5 +31,5 @@
 - Sprint 8) Erzeugung des Abgabe-Prototypen (App) (07.07.2016) - DONE
 - Sprint 9) Programmierung und Tests der Komponenten (07.07.2016) - DONE
 - Sprint 10) Fertigstellung der Enddokumentation (07.07.2016) - DONE
-- Sprint 11) Abgabe und Präsentation (08.07.2016)
+- Sprint 11) Abgabe und Präsentation (08.07.2016) - DONE
 - Sprint 12) Entgegenahme des Preisgeldes :wink:

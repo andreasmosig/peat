@@ -484,3 +484,6 @@ Teilnehmer: Andreas, Thomas, Steven
 **Agenda**:
 - Vorbereitung auf Präsentation
 - 13:00 Uhr: Präsentation, D 418
+
+**Ergebnisse**:
+- Note: 1.3 :wink:
