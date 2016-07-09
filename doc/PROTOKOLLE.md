@@ -477,7 +477,7 @@ Teilnehmer: Andreas, Thomas, Steven
 
 ------------------------------------------------------------------------------------------
 
-#08.07.2016 (Online Meeting via Moodle)
+#08.07.2016 (Präsentation Hochschule)
 12:00 Uhr
 Teilnehmer: Andreas, Thomas, Steven
 
